@@ -1,0 +1,19 @@
+# robots.txt for https://calcvibe.com
+# Generated: 2025-11-07
+# Purpose: Allow all crawlers, block nothing, expose sitemap
+
+User-agent: *
+Allow: /
+
+# Allow all content (calculators, legal pages, etc.)
+Disallow:
+
+# Sitemap location
+Sitemap: https://calcvibe.com/sitemap.xml
+
+# Optional: Block sensitive directories (if any)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Crawl delay (optional, for heavy traffic)
+# Crawl-delay: 10

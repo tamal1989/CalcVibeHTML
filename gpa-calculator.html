@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="GPA Calculator - Calculate weighted/unweighted GPA with AP/IB support. Add courses, credits, grades. Free, accurate, instant." />
+  <meta name="keywords" content="gpa calculator, weighted gpa, unweighted gpa, ap ib grades, grade point average" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="GPA Calculator - CalcVibe" />
+  <meta property="og:description" content="Calculate your GPA with letter grades, credits, and AP/IB weighting. Instant results." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://calcvibe.in/gpa-calculator.html" />
+  <meta property="og:image" content="https://calcvibe.in/assets/images/og-gpa.jpg" />
+  <title>GPA Calculator - CalcVibe</title>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://calcvibe.com/gpa-calculator.html#webpage",
+      "url": "https://calcvibe.com/gpa-calculator.html",
+      "name": "GPA Calculator - CalcVibe",
+      "description": "Calculate weighted and unweighted GPA. Add classes, grades, and credits.",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcvibe.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Academic", "item": "https://calcvibe.com/all-calculators.html#academic" },
+          { "@type": "ListItem", "position": 3, "name": "GPA Calculator", "item": "https://calcvibe.com/gpa-calculator.html" }
+        ]
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "CalcVibe GPA Calculator",
+      "offers": { "@type": "Offer", "price": "0" },
+      "description": "Free GPA calculator with grade scale support. Weighted & unweighted.",
+      "url": "https://calcvibe.com/gpa-calculator.html"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How to calculate weighted GPA?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Enter grade + credits for each class. Honors/AP get +0.5/+1.0 boost." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+</head>
+<body class="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+
+  <!-- Header -->
+  <header class="bg-slate-900/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
+    <nav class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-purple-400 flex items-center">
+        <i class="fas fa-calculator mr-2"></i> CalcVibe
+      </a>
+      <ul class="hidden md:flex space-x-6 text-sm">
+        <li><a href="index.html" class="hover:text-purple-400">Home</a></li>
+        <li><a href="calculators.html" class="hover:text-purple-400">Calculators</a></li>
+        <li><a href="index.html#faq" class="hover:text-purple-400">FAQ</a></li>
+        <li><a href="index.html#about" class="hover:text-purple-400">About</a></li>
+        <li><a href="privacy.html" class="hover:text-purple-400">Privacy</a></li>
+        <li><a href="terms.html" class="hover:text-purple-400">Terms</a></li>
+      </ul>
+      <button id="mobile-menu-btn" class="md:hidden text-white">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-800 p-4">
+      <a href="index.html" class="block py-2 hover:text-purple-400">Home</a>
+      <a href="calculators.html" class="block py-2 hover:text-purple-400">Calculators</a>
+      <a href="index.html#faq" class="block py-2 hover:text-purple-400">FAQ</a>
+      <a href="index.html#about" class="block py-2 hover:text-purple-400">About</a>
+      <a href="privacy.html" class="block py-2 hover:text-purple-400">Privacy</a>
+      <a href="terms.html" class="block py-2 hover:text-purple-400">Terms</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="py-16 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full mb-4 shadow-lg">
+        <i class="fas fa-chart-line text-white text-2xl"></i>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-bold mb-2 text-white">
+        GPA Calculator
+      </h1>
+      <p class="text-gray-300 max-w-2xl mx-auto">
+        Calculate your grade point average (GPA) with support for AP/IB, weighted/unweighted scales, and semester grouping
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Calculator Card -->
+  <section class="max-w-5xl mx-auto px-4 pb-12">
+    <div class="bg-slate-800/50 backdrop-blur-md rounded-3xl p-8 shadow-2xl border border-slate-700">
+
+      <!-- About -->
+      <div class="mb-8">
+        <h2 class="text-xl font-semibold text-purple-400 mb-3">About the GPA Calculator</h2>
+        <p class="text-sm text-gray-300 leading-relaxed">
+          Use this calculator to calculate grade point average (GPA) and generate a GPA report. If you use percentage grades, have grades on a different scale or in high school with AP/IB classes, please change the "Settings" to input specific values. Also use the settings to group courses into semesters or to include past GPA.
+        </p>
+      </div>
+
+      <!-- Course Table -->
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full text-sm" id="courseTable">
+          <thead>
+            <tr class="border-b border-slate-600">
+              <th class="py-3 px-2 text-left text-gray-300">Course (optional)</th>
+              <th class="py-3 px-2 text-center text-gray-300">Credits</th>
+              <th class="py-3 px-2 text-center text-gray-300">Grade</th>
+              <th class="py-3 px-2"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Rows will be added dynamically -->
+          </tbody>
+        </table>
+        <button onclick="addCourse()" class="mt-4 text-purple-400 hover:text-purple-300 text-sm flex items-center">
+          <i class="fas fa-plus mr-1"></i> add more courses
+        </button>
+      </div>
+
+      <!-- Settings -->
+      <div class="mb-6 p-5 bg-slate-700/30 rounded-xl">
+        <h3 class="text-lg font-semibold text-purple-400 mb-3 flex items-center">
+          <i class="fas fa-cog mr-2"></i> Settings
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm text-gray-300 mb-1">Grading Scale</label>
+            <select id="gradingScale" class="w-full p-3 rounded-xl bg-slate-700/80 border border-slate-600 text-white focus:ring-2 focus:ring-purple-500">
+              <option value="standard">Standard (A=4.0)</option>
+              <option value="plusminus">With +/- (A+=4.3)</option>
+              <option value="apib">AP/IB (+1.0 weight)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm text-gray-300 mb-1">Calculation Type</label>
+            <select id="calcType" class="w-full p-3 rounded-xl bg-slate-700/80 border border-slate-600 text-white focus:ring-2 focus:ring-purple-500">
+              <option value="current">Current Semester</option>
+              <option value="cumulative">Cumulative (with past GPA)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- GPA Planning (Cumulative Mode) -->
+      <div id="planningSection" class="hidden mb-6 p-5 bg-slate-700/30 rounded-xl">
+        <h3 class="text-lg font-semibold text-purple-400 mb-3">GPA Planning Calculator</h3>
+        <p class="text-sm text-gray-300 mb-4">Determine the minimum GPA required in future courses to reach your target.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm text-gray-300 mb-1">Current GPA</label>
+            <input type="number" id="currentGPA" step="0.01" min="0" max="4.3" placeholder="e.g. 3.5" class="w-full p-3 rounded-xl bg-slate-700/80 border border-slate-600 text-white focus:ring-2 focus:ring-purple-500" />
+          </div>
+          <div>
+            <label class="block text-sm text-gray-300 mb-1">Target GPA</label>
+            <input type="number" id="targetGPA" step="0.01" min="0" max="4.3" placeholder="e.g. 3.8" class="w-full p-3 rounded-xl bg-slate-700/80 border border-slate-600 text-white focus:ring-2 focus:ring-purple-500" />
+          </div>
+          <div>
+            <label class="block text-sm text-gray-300 mb-1">Current Credits</label>
+            <input type="number" id="currentCredits" min="0" placeholder="e.g. 60" class="w-full p-3 rounded-xl bg-slate-700/80 border border-slate-600 text-white focus:ring-2 focus:ring-purple-500" />
+          </div>
+          <div>
+            <label class="block text-sm text-gray-300 mb-1">Additional Credits</label>
+            <input type="number" id="additionalCredits" min="0" placeholder="e.g. 30" class="w-full p-3 rounded-xl bg-slate-700/80 border border-slate-600 text-white focus:ring-2 focus:ring-purple-500" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Calculate Button -->
+      <button onclick="calculateGPA()" class="w-full bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 text-white font-semibold py-4 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-200 flex items-center justify-center">
+        <i class="fas fa-calculator mr-2"></i> Calculate GPA
+      </button>
+
+      <!-- Result -->
+      <div id="result" class="mt-8 p-6 bg-slate-700/50 rounded-xl hidden">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+          <div>
+            <h3 class="text-3xl font-bold text-purple-400" id="gpaValue">—</h3>
+            <p class="text-sm text-gray-300">Your GPA</p>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-emerald-400" id="totalCredits">—</h3>
+            <p class="text-sm text-gray-300">Total Credits</p>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-cyan-400" id="gradePoints">—</h3>
+            <p class="text-sm text-gray-300">Grade Points</p>
+          </div>
+        </div>
+        <div id="planningResult" class="mt-4 p-4 bg-slate-600/50 rounded-lg hidden">
+          <p class="text-sm text-emerald-300" id="requiredGPA"></p>
+        </div>
+      </div>
+
+      <!-- Grade Scale Reference -->
+      <div class="mt-10 p-6 bg-slate-700/30 rounded-xl">
+        <h3 class="text-lg font-semibold text-purple-400 mb-3">Grade Scale Reference</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
+          <div class="bg-slate-600 p-2 rounded text-center"><span class="font-mono">A+</span> = 4.3</div>
+          <div class="bg-slate-600 p-2 rounded text-center"><span class="font-mono">A</span> = 4.0</div>
+          <div class="bg-slate-600 p-2 rounded text-center"><span class="font-mono">A-</span> = 3.7</div>
+          <div class="bg-slate-600 p-2 rounded text-center"><span class="font-mono">B+</span> = 3.3</div>
+          <div class="bg-slate-600 p-2 rounded text-center"><span class="font-mono">B</span> = 3.0</div>
+          <div class="bg-slate-600 p-2 rounded text-center"><span class="font-mono">B-</span> = 2.7</div>
+          <div class="bg-slate-600 p-2 rounded text-center"><span class="font-mono">C+</span> = 2.3</div>
+          <div class="bg-slate-600 p-2 rounded text-center"><span class="font-mono">C</span> = 2.0</div>
+          <div class="bg-slate-600 p-2 rounded text-center"><span class="font-mono">C-</span> = 1.7</div>
+          <div class="bg-slate-600 p-2 rounded text-center"><span class="font-mono">D+</span> = 1.3</div>
+          <div class="bg-slate-600 p-2 rounded text-center"><span class="font-mono">D</span> = 1.0</div>
+          <div class="bg-slate-600 p-2 rounded text-center"><span class="font-mono">F</span> = 0.0</div>
+        </div>
+        <p class="text-xs text-gray-400 mt-3">P/NP, I, W grades are ignored in GPA calculation.</p>
+      </div>
+
+      <!-- GPA Raising Tips -->
+      <div class="mt-8 p-6 bg-slate-700/30 rounded-xl">
+        <h3 class="text-lg font-semibold text-purple-400 mb-3">Guidelines for Raising GPA</h3>
+        <ul class="text-sm text-gray-300 space-y-2">
+          <li><strong>Active Class Attendance:</strong> Engage in lectures and ask questions to deepen understanding.</li>
+          <li><strong>Effective Planning:</strong> Organize your study schedule and prioritize high-credit courses.</li>
+          <li><strong>Regular Review:</strong> Study consistently rather than cramming before exams.</li>
+          <li><strong>Note-Taking:</strong> Develop a system to quickly reference key concepts.</li>
+          <li><strong>Time Management:</strong> Balance coursework with adequate rest and recreation.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Related Calculators -->
+    <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="apush-score-calculator.html" class="bg-slate-800/50 backdrop-blur p-6 rounded-xl hover:bg-slate-700/50 transition-all text-center group">
+        <i class="fas fa-graduation-cap text-cyan-400 text-2xl mb-2 group-hover:scale-110 transition-transform"></i>
+        <p class="text-sm font-medium text-white">APUSH Score</p>
+        <p class="text-xs text-gray-400">Calculate AP History score</p>
+      </a>
+      <a href="sat-score-calculator.html" class="bg-slate-800/50 backdrop-blur p-6 rounded-xl hover:bg-slate-700/50 transition-all text-center group">
+        <i class="fas fa-edit text-cyan-400 text-2xl mb-2 group-hover:scale-110 transition-transform"></i>
+        <p class="text-sm font-medium text-white">SAT Calculator</p>
+        <p class="text-xs text-gray-400">Predict SAT score</p>
+      </a>
+      <a href="grade-calculator.html" class="bg-slate-800/50 backdrop-blur p-6 rounded-xl hover:bg-slate-700/50 transition-all text-center group">
+        <i class="fas fa-percentage text-cyan-400 text-2xl mb-2 group-hover:scale-110 transition-transform"></i>
+        <p class="text-sm font-medium text-white">Grade Calculator</p>
+        <p class="text-xs text-gray-400">Final grade needed</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 py-8 px-4 mt-16 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-center text-sm">
+        <div class="flex items-center mb-4 md:mb-0">
+          <i class="fas fa-calculator text-purple-400 mr-2"></i>
+          <span class="font-bold text-purple-400">CalcVibe</span>
+          <span class="text-gray-400 ml-2">Your trusted calculator hub for all computational needs</span>
+        </div>
+        <div class="flex space-x-6">
+          <div>
+            <p class="font-medium text-white mb-1">Calculators</p>
+            <ul class="text-xs text-gray-400 space-y-1">
+              <li><a href="gpa-calculator.html" class="hover:text-purple-400">GPA Calculator</a></li>
+              <li><a href="apush-score-calculator.html" class="hover:text-purple-400">APUSH Score</a></li>
+              <li><a href="determinant-calculator.html" class="hover:text-purple-400">Matrix Determinant</a></li>
+              <li><a href="pokemon-type-calculator.html" class="hover:text-purple-400">Pokémon Type</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-medium text-white mb-1">Legal</p>
+            <ul class="text-xs text-gray-400 space-y-1">
+              <li><a href="privacy.html" class="hover:text-purple-400">Privacy Policy</a></li>
+              <li><a href="terms.html" class="hover:text-purple-400">Terms of Service</a></li>
+              <li><a href="cookie-policy.html" class="hover:text-purple-400">Cookie Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="text-center text-xs text-gray-500 mt-8">© 2025 CalcVibe Calculator Hub. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Mobile Menu
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // GPA Grade Scale
+    const gradeScale = {
+      standard: { 'A':4.0, 'B':3.0, 'C':2.0, 'D':1.0, 'F':0.0 },
+      plusminus: { 'A+':4.3, 'A':4.0, 'A-':3.7, 'B+':3.3, 'B':3.0, 'B-':2.7, 'C+':2.3, 'C':2.0, 'C-':1.7, 'D+':1.3, 'D':1.0, 'D-':0.7, 'F':0.0 },
+      apib: { 'A+':5.3, 'A':5.0, 'A-':4.7, 'B+':4.3, 'B':4.0, 'B-':3.7, 'C+':3.3, 'C':3.0, 'C-':2.7, 'D+':2.3, 'D':2.0, 'D-':1.7, 'F':0.0 }
+    };
+
+    // Add initial 5 rows
+    for (let i = 0; i < 5; i++) addCourse();
+
+    function addCourse() {
+      const table = document.querySelector('#courseTable tbody');
+      const row = document.createElement('tr');
+      row.className = 'border-b border-slate-700';
+      row.innerHTML = `
+        <td class="py-3 px-2"><input type="text" placeholder="Course name" class="w-full p-2 rounded bg-slate-700/60 border border-slate-600 text-white text-sm focus:ring-1 focus:ring-purple-500"></td>
+        <td class="py-3 px-2"><input type="number" min="0" step="0.5" placeholder="3" class="w-full p-2 rounded bg-slate-700/60 border border-slate-600 text-white text-sm text-center focus:ring-1 focus:ring-purple-500"></td>
+        <td class="py-3 px-2">
+          <select class="w-full p-2 rounded bg-slate-700/60 border border-slate-600 text-white text-sm focus:ring-1 focus:ring-purple-500">
+            <option value="">—</option>
+            <option value="A+">A+</option><option value="A">A</option><option value="A-">A-</option>
+            <option value="B+">B+</option><option value="B">B</option><option value="B-">B-</option>
+            <option value="C+">C+</option><option value="C">C</option><option value="C-">C-</option>
+            <option value="D+">D+</option><option value="D">D</option><option value="D-">D-</option>
+            <option value="F">F</option><option value="P">P (Pass)</option><option value="NP">NP (No Pass)</option>
+          </select>
+        </td>
+        <td class="py-3 px-2 text-center"><button onclick="this.parentElement.parentElement.remove()" class="text-red-400 hover:text-red-300 text-xs"><i class="fas fa-trash"></i></button></td>
+      `;
+      table.appendChild(row);
+    }
+
+    // Toggle Planning Section
+    document.getElementById('calcType').addEventListener('change', function() {
+      document.getElementById('planningSection').classList.toggle('hidden', this.value !== 'cumulative');
+    });
+
+    function calculateGPA() {
+      const rows = document.querySelectorAll('#courseTable tbody tr');
+      const scale = document.getElementById('gradingScale').value;
+      const type = document.getElementById('calcType').value;
+      let totalPoints = 0, totalCredits = 0;
+
+      let valid = true;
+      rows.forEach(row => {
+        const credits = parseFloat(row.querySelectorAll('input')[1].value) || 0;
+        const grade = row.querySelector('select').value;
+        if (credits > 0 && grade && !['P','NP'].includes(grade)) {
+          const points = gradeScale[scale][grade];
+          if (points === undefined) { valid = false; return; }
+          totalPoints += points * credits;
+          totalCredits += credits;
+        }
+      });
+
+      if (!valid || totalCredits === 0) {
+        alert('Please fill in valid credits and grades.');
+        return;
+      }
+
+      let gpa = totalPoints / totalCredits;
+
+      // Cumulative GPA Planning
+      if (type === 'cumulative') {
+        const currentGPA = parseFloat(document.getElementById('currentGPA').value) || 0;
+        const currentCredits = parseFloat(document.getElementById('currentCredits').value) || 0;
+        const targetGPA = parseFloat(document.getElementById('targetGPA').value) || 0;
+        const additionalCredits = parseFloat(document.getElementById('additionalCredits').value) || 0;
+
+        if (currentGPA > 0 && currentCredits > 0 && targetGPA > 0 && additionalCredits > 0) {
+          const currentPoints = currentGPA * currentCredits;
+          const requiredPoints = targetGPA * (currentCredits + additionalCredits) - currentPoints;
+          const requiredGPA = requiredPoints / additionalCredits;
+
+          document.getElementById('requiredGPA').textContent = `You need a ${requiredGPA.toFixed(2)} GPA in the next ${additionalCredits} credits to reach ${targetGPA}.`;
+          document.getElementById('planningResult').classList.remove('hidden');
+        }
+      }
+
+      document.getElementById('gpaValue').textContent = gpa.toFixed(2);
+      document.getElementById('totalCredits').textContent = totalCredits;
+      document.getElementById('gradePoints').textContent = totalPoints.toFixed(1);
+      document.getElementById('result').classList.remove('hidden');
+
+      gtag('event', 'gpa_calculate', { gpa: gpa.toFixed(2) });
+    }
+  </script>
+
+</body>
+</html>

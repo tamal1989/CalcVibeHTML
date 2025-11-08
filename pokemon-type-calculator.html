@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Pokémon Type Calculator - Calculate type effectiveness and damage multipliers for Gen 9. Supports dual-types and all 18 types. Free, instant results." />
+  <meta name="keywords" content="pokemon type calculator, type chart, gen 9, dual type, type effectiveness, pokemon weaknesses" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Pokémon Type Calculator (Gen 9) - CalcVibe" />
+  <meta property="og:description" content="Select attacking move type and defending Pokémon types to see damage multipliers (0.25x, 0.5x, 1x, 2x, 4x) and weaknesses." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://calcvibe.in/pokemon-type-calculator.html" />
+  <meta property="og:image" content="https://calcvibe.in/assets/images/og-pokemon.jpg" />
+  <title>Pokémon Type Calculator - Gen 9 | CalcVibe</title>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://calcvibe.com/pokemon-type-calculator.html#webpage",
+      "url": "https://calcvibe.com/pokemon-type-calculator.html",
+      "name": "Pokémon Type Calculator - CalcVibe",
+      "description": "Gen 9 type effectiveness chart. Attack vs defense. Tera, dual types. Free battle tool.",
+      "inLanguage": "en-US",
+      "isPartOf": { "@type": "WebSite", "url": "https://calcvibe.com", "name": "CalcVibe" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcvibe.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Gaming", "item": "https://calcvibe.com/all-calculators.html#gaming" },
+          { "@type": "ListItem", "position": 3, "name": "Pokémon Type Calculator", "item": "https://calcvibe.com/pokemon-type-calculator.html" }
+        ]
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "CalcVibe Pokémon Type Calculator",
+      "applicationCategory": "Game",
+      "offers": { "@type": "Offer", "price": "0" },
+      "description": "Free Gen 9 type matchup tool. Shows 0.25x, 0.5x, 1x, 2x, 4x damage. Supports Tera.",
+      "url": "https://calcvibe.com/pokemon-type-calculator.html"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does it include Tera Type?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Select Tera type to override defensive typing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this for Scarlet & Violet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Uses Gen 9 type chart with all 18 types and dual-type interactions."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+  
+</head>
+<body class="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+
+  <!-- Header -->
+  <header class="bg-slate-900/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
+    <nav class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-purple-400 flex items-center">
+        <i class="fas fa-calculator mr-2"></i> CalcVibe
+      </a>
+      <ul class="hidden md:flex space-x-6 text-sm">
+        <li><a href="index.html" class="hover:text-purple-400">Home</a></li>
+        <li><a href="calculators.html" class="hover:text-purple-400">Calculators</a></li>
+        <li><a href="index.html#faq" class="hover:text-purple-400">FAQ</a></li>
+        <li><a href="index.html#about" class="hover:text-purple-400">About</a></li>
+        <li><a href="privacy.html" class="hover:text-purple-400">Privacy</a></li>
+        <li><a href="terms.html" class="hover:text-purple-400">Terms</a></li>
+      </ul>
+      <button id="mobile-menu-btn" class="md:hidden text-white">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-800 p-4">
+      <a href="index.html" class="block py-2 hover:text-purple-400">Home</a>
+      <a href="calculators.html" class="block py-2 hover:text-purple-400">Calculators</a>
+      <a href="index.html#faq" class="block py-2 hover:text-purple-400">FAQ</a>
+      <a href="index.html#about" class="block py-2 hover:text-purple-400">About</a>
+      <a href="privacy.html" class="block py-2 hover:text-purple-400">Privacy</a>
+      <a href="terms.html" class="block py-2 hover:text-purple-400">Terms</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="py-16 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full mb-4 shadow-lg">
+        <i class="fas fa-gamepad text-white text-2xl"></i>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-bold mb-2 text-white">
+        Pokémon Type Calculator
+      </h1>
+      <p class="text-gray-300 max-w-2xl mx-auto">
+        Calculate type effectiveness, damage multipliers, and weaknesses for Pokémon battles (Gen 9). Supports single and dual types.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Calculator Card -->
+  <section class="max-w-4xl mx-auto px-4 pb-12">
+    <div class="bg-slate-800/50 backdrop-blur-md rounded-3xl p-8 shadow-2xl border border-slate-700">
+      
+      <!-- About -->
+      <div class="mb-8">
+        <h2 class="text-xl font-semibold text-purple-400 mb-3">About the Pokémon Type Calculator</h2>
+        <p class="text-sm text-gray-300 leading-relaxed">
+          This calculator helps you understand type matchups in Pokémon battles. Select the attacking move type and the defending Pokémon's type(s) to see how effective the move will be. It supports both single and dual-type Pokémon and uses the official Gen 9 type chart.
+        </p>
+        <p class="text-sm text-gray-300 mt-3">
+          <strong>Effectiveness:</strong> Super Effective (2x), Not Very Effective (0.5x), No Effect (0x), Immune (0x). Dual types multiply the multipliers.
+        </p>
+      </div>
+
+      <!-- Input Form -->
+      <div class="space-y-5">
+        <!-- Attacking Type -->
+        <div>
+          <label class="block text-sm font-medium text-gray-300 mb-2">
+            <i class="fas fa-sword mr-1"></i> Attacking Move Type
+          </label>
+          <select id="attack-type" class="w-full p-3 rounded-xl bg-slate-700/80 border border-slate-600 text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all" onchange="calculateType()">
+            <option value="">Select Attack Type</option>
+            <option value="normal">Normal</option>
+            <option value="fire">Fire</option>
+            <option value="water">Water</option>
+            <option value="grass">Grass</option>
+            <option value="electric">Electric</option>
+            <option value="ice">Ice</option>
+            <option value="fighting">Fighting</option>
+            <option value="poison">Poison</option>
+            <option value="ground">Ground</option>
+            <option value="flying">Flying</option>
+            <option value="psychic">Psychic</option>
+            <option value="bug">Bug</option>
+            <option value="rock">Rock</option>
+            <option value="ghost">Ghost</option>
+            <option value="dragon">Dragon</option>
+            <option value="dark">Dark</option>
+            <option value="steel">Steel</option>
+            <option value="fairy">Fairy</option>
+          </select>
+        </div>
+
+        <!-- Defending Type 1 -->
+        <div>
+          <label class="block text-sm font-medium text-gray-300 mb-2">
+            <i class="fas fa-shield-alt mr-1"></i> Defending Pokémon Type 1
+          </label>
+          <select id="defend-type1" class="w-full p-3 rounded-xl bg-slate-700/80 border border-slate-600 text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all" onchange="calculateType()">
+            <option value="">Select Type 1</option>
+            <option value="normal">Normal</option>
+            <option value="fire">Fire</option>
+            <option value="water">Water</option>
+            <option value="grass">Grass</option>
+            <option value="electric">Electric</option>
+            <option value="ice">Ice</option>
+            <option value="fighting">Fighting</option>
+            <option value="poison">Poison</option>
+            <option value="ground">Ground</option>
+            <option value="flying">Flying</option>
+            <option value="psychic">Psychic</option>
+            <option value="bug">Bug</option>
+            <option value="rock">Rock</option>
+            <option value="ghost">Ghost</option>
+            <option value="dragon">Dragon</option>
+            <option value="dark">Dark</option>
+            <option value="steel">Steel</option>
+            <option value="fairy">Fairy</option>
+          </select>
+        </div>
+
+        <!-- Defending Type 2 -->
+        <div>
+          <label class="block text-sm font-medium text-gray-300 mb-2">
+            Defending Pokémon Type 2 (Optional)
+          </label>
+          <select id="defend-type2" class="w-full p-3 rounded-xl bg-slate-700/80 border border-slate-600 text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all" onchange="calculateType()">
+            <option value="">Single Type</option>
+            <option value="normal">Normal</option>
+            <option value="fire">Fire</option>
+            <option value="water">Water</option>
+            <option value="grass">Grass</option>
+            <option value="electric">Electric</option>
+            <option value="ice">Ice</option>
+            <option value="fighting">Fighting</option>
+            <option value="poison">Poison</option>
+            <option value="ground">Ground</option>
+            <option value="flying">Flying</option>
+            <option value="psychic">Psychic</option>
+            <option value="bug">Bug</option>
+            <option value="rock">Rock</option>
+            <option value="ghost">Ghost</option>
+            <option value="dragon">Dragon</option>
+            <option value="dark">Dark</option>
+            <option value="steel">Steel</option>
+            <option value="fairy">Fairy</option>
+          </select>
+        </div>
+
+        <!-- Calculate Button -->
+        <button onclick="calculateType()" class="w-full bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 text-white font-semibold py-4 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-200 flex items-center justify-center">
+          <i class="fas fa-bolt mr-2"></i> Calculate Type Effectiveness
+        </button>
+      </div>
+
+      <!-- Result -->
+      <div id="result" class="mt-8 p-6 bg-slate-700/50 rounded-xl hidden">
+        <div class="text-center">
+          <h3 class="text-xl font-bold text-purple-400 mb-2">Type Effectiveness</h3>
+          <div id="multiplier" class="text-4xl font-bold mb-2"></div>
+          <p id="description" class="text-sm text-gray-300"></p>
+          <div id="types-display" class="text-xs text-gray-500 mt-2"></div>
+        </div>
+      </div>
+
+      <!-- How to Use -->
+      <div class="mt-10 p-6 bg-slate-700/30 rounded-xl">
+        <h3 class="text-lg font-semibold text-purple-400 mb-3">How to Use the Pokémon Type Calculator</h3>
+        <ol class="text-sm text-gray-300 space-y-2 list-decimal list-inside">
+          <li>Select the type of the attacking move from the dropdown</li>
+          <li>Choose the first type of the defending Pokémon</li>
+          <li>(Optional) Add a second type for dual-type Pokémon</li>
+          <li>Click "Calculate Type Effectiveness" to see the result</li>
+          <li>Use the color-coded output to understand battle advantages</li>
+        </ol>
+        <p class="text-xs text-gray-400 mt-4">
+          <strong>Note:</strong> This calculator uses the official Gen 9 type chart. Dual types multiply the individual multipliers.
+        </p>
+      </div>
+
+      <!-- Type Effectiveness Guide -->
+      <div class="mt-8 p-6 bg-slate-700/30 rounded-xl">
+        <h3 class="text-lg font-semibold text-purple-400 mb-3">Type Effectiveness Guide</h3>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-3 text-center">
+          <div class="bg-gradient-to-br from-red-500 to-red-600 p-3 rounded-lg">
+            <div class="text-2xl font-bold text-white">4x</div>
+            <div class="text-xs text-red-100">Very Super Effective</div>
+          </div>
+          <div class="bg-gradient-to-br from-red-400 to-red-500 p-3 rounded-lg">
+            <div class="text-2xl font-bold text-white">2x</div>
+            <div class="text-xs text-red-100">Super Effective</div>
+          </div>
+          <div class="bg-gradient-to-br from-gray-600 to-gray-700 p-3 rounded-lg">
+            <div class="text-2xl font-bold text-white">1x</div>
+            <div class="text-xs text-gray-300">Normal</div>
+          </div>
+          <div class="bg-gradient-to-br from-blue-400 to-blue-500 p-3 rounded-lg">
+            <div class="text-2xl font-bold text-white">0.5x</div>
+            <div class="text-xs text-blue-100">Not Very Effective</div>
+          </div>
+          <div class="bg-gradient-to-br from-gray-700 to-gray-800 p-3 rounded-lg">
+            <div class="text-2xl font-bold text-white">0x</div>
+            <div class="text-xs text-gray-300">No Effect</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Battle Tips -->
+      <div class="mt-8 p-6 bg-slate-700/30 rounded-xl">
+        <h3 class="text-lg font-semibold text-purple-400 mb-3">Pokémon Battle Tips</h3>
+        <ul class="text-sm text-gray-300 space-y-1 list-disc list-inside">
+          <li><strong>Super Effective:</strong> Always prioritize moves that deal 2x or 4x damage</li>
+          <li><strong>Resistances:</strong> Avoid 0.5x moves; switch to a better matchup</li>
+          <li><strong>Immunities:</strong> 0x moves are useless; change strategy immediately</li>
+          <li><strong>Dual Types:</strong> Multipliers multiply (0.5x × 0.5x = 0.25x)</li>
+          <li><strong>STAB:</strong> Same-Type Attack Bonus adds 1.5x to matching moves</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Related Calculators -->
+    <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="apush-score-calculator.html" class="bg-slate-800/50 backdrop-blur p-6 rounded-xl hover:bg-slate-700/50 transition-all text-center group">
+        <i class="fas fa-graduation-cap text-cyan-400 text-2xl mb-2 group-hover:scale-110 transition-transform"></i>
+        <p class="text-sm font-medium text-white">APUSH Score</p>
+        <p class="text-xs text-gray-400">Calculate AP History score</p>
+      </a>
+      <a href="gpa-calculator.html" class="bg-slate-800/50 backdrop-blur p-6 rounded-xl hover:bg-slate-700/50 transition-all text-center group">
+        <i class="fas fa-chart-line text-cyan-400 text-2xl mb-2 group-hover:scale-110 transition-transform"></i>
+        <p class="text-sm font-medium text-white">GPA Calculator</p>
+        <p class="text-xs text-gray-400">Weighted/Unweighted GPA</p>
+      </a>
+      <a href="sat-score-calculator.html" class="bg-slate-800/50 backdrop-blur p-6 rounded-xl hover:bg-slate-700/50 transition-all text-center group">
+        <i class="fas fa-edit text-cyan-400 text-2xl mb-2 group-hover:scale-110 transition-transform"></i>
+        <p class="text-sm font-medium text-white">SAT Score</p>
+        <p class="text-xs text-gray-400">Predict SAT score</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 py-8 px-4 mt-16 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-center text-sm">
+        <div class="flex items-center mb-4 md:mb-0">
+          <i class="fas fa-calculator text-purple-400 mr-2"></i>
+          <span class="font-bold text-purple-400">CalcVibe</span>
+          <span class="text-gray-400 ml-2">Your trusted calculator hub for all computational needs</span>
+        </div>
+        <div class="flex space-x-6">
+          <div>
+            <p class="font-medium text-white mb-1">Calculators</p>
+            <ul class="text-xs text-gray-400 space-y-1">
+              <li><a href="pokemon-type-calculator.html" class="hover:text-purple-400">Pokémon Type</a></li>
+              <li><a href="apush-score-calculator.html" class="hover:text-purple-400">APUSH Score</a></li>
+              <li><a href="gpa-calculator.html" class="hover:text-purple-400">GPA Calculator</a></li>
+              <li><a href="determinant-calculator.html" class="hover:text-purple-400">Matrix Determinant</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-medium text-white mb-1">Legal</p>
+            <ul class="text-xs text-gray-400 space-y-1">
+              <li><a href="privacy.html" class="hover:text-purple-400">Privacy Policy</a></li>
+              <li><a href="terms.html" class="hover:text-purple-400">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="text-center text-xs text-gray-500 mt-8">© 2025 CalcVibe Calculator Hub. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Mobile Menu
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Pokémon Type Chart (Gen 9)
+    const typeChart = {
+      'normal': {'rock': 0.5, 'ghost': 0},
+      'fire': {'fire': 0.5, 'water': 0.5, 'grass': 2, 'ice': 2, 'bug': 2, 'rock': 0.5, 'dragon': 0.5, 'steel': 2},
+      'water': {'fire': 2, 'water': 0.5, 'grass': 0.5, 'ground': 2, 'rock': 2, 'dragon': 0.5},
+      'grass': {'fire': 0.5, 'water': 2, 'grass': 0.5, 'poison': 0.5, 'ground': 2, 'flying': 0.5, 'bug': 0.5, 'rock': 2, 'dragon': 0.5, 'steel': 0.5},
+      'electric': {'water': 2, 'electric': 0.5, 'grass': 0.5, 'ground': 0, 'flying': 2, 'dragon': 0.5},
+      'ice': {'fire': 0.5, 'water': 0.5, 'grass': 2, 'ice': 0.5, 'ground': 2, 'flying': 2, 'dragon': 2, 'steel': 0.5},
+      'fighting': {'normal': 2, 'ice': 2, 'poison': 0.5, 'flying': 0.5, 'psychic': 0.5, 'bug': 0.5, 'rock': 2, 'ghost': 0, 'dark': 2, 'steel': 2, 'fairy': 0.5},
+      'poison': {'grass': 2, 'poison': 0.5, 'ground': 0.5, 'rock': 0.5, 'ghost': 0.5, 'steel': 0, 'fairy': 2},
+      'ground': {'fire': 2, 'electric': 2, 'grass': 0.5, 'poison': 2, 'flying': 0, 'bug': 0.5, 'rock': 2, 'steel': 2},
+      'flying': {'grass': 2, 'electric': 0.5, 'fighting': 2, 'bug': 2, 'rock': 0.5, 'steel': 0.5},
+      'psychic': {'fighting': 2, 'poison': 2, 'psychic': 0.5, 'dark': 0, 'steel': 0.5},
+      'bug': {'fire': 0.5, 'grass': 2, 'fighting': 0.5, 'poison': 0.5, 'flying': 0.5, 'psychic': 2, 'ghost': 0.5, 'dark': 2, 'steel': 0.5, 'fairy': 0.5},
+      'rock': {'fire': 2, 'ice': 2, 'fighting': 0.5, 'ground': 0.5, 'flying': 2, 'bug': 2, 'steel': 0.5},
+      'ghost': {'normal': 0, 'psychic': 2, 'ghost': 2, 'dark': 0.5},
+      'dragon': {'dragon': 2, 'steel': 0.5, 'fairy': 0},
+      'dark': {'fighting': 0.5, 'psychic': 2, 'ghost': 2, 'dark': 0.5, 'fairy': 0.5},
+      'steel': {'fire': 0.5, 'water': 0.5, 'electric': 0.5, 'ice': 2, 'rock': 2, 'steel': 0.5, 'fairy': 2},
+      'fairy': {'fire': 0.5, 'fighting': 2, 'poison': 0.5, 'dragon': 2, 'dark': 2, 'steel': 0.5}
+    };
+
+    function calculateType() {
+      const attack = document.getElementById('attack-type').value;
+      const defend1 = document.getElementById('defend-type1').value;
+      const defend2 = document.getElementById('defend-type2').value;
+
+      if (!attack || !defend1) {
+        document.getElementById('result').classList.add('hidden');
+        return;
+      }
+
+      let multiplier = 1;
+      [defend1, defend2].forEach(defend => {
+        if (defend && typeChart[attack] && typeChart[attack][defend] !== undefined) {
+          multiplier *= typeChart[attack][defend];
+        }
+      });
+
+      const result = document.getElementById('result');
+      const multiplierEl = document.getElementById('multiplier');
+      const descriptionEl = document.getElementById('description');
+      const typesEl = document.getElementById('types-display');
+
+      multiplierEl.textContent = `${multiplier}x`;
+      multiplierEl.className = multiplier === 0 ? 'text-gray-400' : multiplier < 1 ? 'text-blue-400' : multiplier > 1 ? 'text-red-400' : 'text-white';
+
+      const desc = multiplier === 0 ? 'No Effect' : multiplier < 1 ? 'Not Very Effective' : multiplier > 1 ? 'Super Effective' : 'Normal';
+      descriptionEl.textContent = desc;
+
+      typesEl.textContent = defend2 ? `vs ${defend1}/${defend2}` : `vs ${defend1}`;
+
+      result.classList.remove('hidden');
+
+      gtag('event', 'pokemon_type_calculate', { attack, defend1, defend2, multiplier });
+    }
+  </script>
+
+</body>
+</html>

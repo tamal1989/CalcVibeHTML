@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Topsoil Calculator - Estimate topsoil volume in cubic yards or meters for gardens, lawns, and landscaping projects. Input area and depth. Free, instant." />
+  <meta name="keywords" content="topsoil calculator, cubic yards topsoil, garden soil volume, landscaping calculator, topsoil needed" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Topsoil Calculator - CalcVibe" />
+  <meta property="og:description" content="Calculate topsoil volume for any area and depth. Supports square, rectangular, or circular beds. Instant results with cost estimate." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://calcvibe.in/topsoil-calculator.html" />
+  <meta property="og:image" content="https://calcvibe.in/assets/images/og-topsoil.jpg" />
+  <title>Topsoil Calculator - CalcVibe</title>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://calcvibe.com/topsoil-calculator.html#webpage",
+      "url": "https://calcvibe.com/topsoil-calculator.html",
+      "name": "Topsoil Calculator - CalcVibe",
+      "description": "Calculate topsoil volume in cubic yards. For gardens, lawns, landscaping. Free.",
+      "inLanguage": "en-US",
+      "isPartOf": { "@type": "WebSite", "url": "https://calcvibe.com", "name": "CalcVibe" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcvibe.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Practical", "item": "https://calcvibe.com/all-calculators.html#practical" },
+          { "@type": "ListItem", "position": 3, "name": "Topsoil Calculator", "item": "https://calcvibe.com/topsoil-calculator.html" }
+        ]
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "CalcVibe Topsoil Calculator",
+      "applicationCategory": "Utility",
+      "offers": { "@type": "Offer", "price": "0" },
+      "description": "Free topsoil volume calculator. Enter length, width, depth → get cubic yards.",
+      "url": "https://calcvibe.com/topsoil-calculator.html"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much topsoil do I need for a garden?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Enter length × width × depth (in inches). We convert to cubic yards."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>  
+  
+</head>
+<body class="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white">
+
+  <!-- Header -->
+  <header class="bg-slate-900/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
+    <nav class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-purple-400 flex items-center">
+        <i class="fas fa-calculator mr-2"></i> CalcVibe
+      </a>
+      <ul class="hidden md:flex space-x-6 text-sm">
+        <li><a href="index.html" class="hover:text-purple-400">Home</a></li>
+        <li><a href="all-calculators.html" class="hover:text-purple-400">Calculators</a></li>
+        <li><a href="index.html#faq" class="hover:text-purple-400">FAQ</a></li>
+        <li><a href="privacy.html" class="hover:text-purple-400">Privacy</a></li>
+      </ul>
+      <button id="mobile-menu-btn" class="md:hidden text-white">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-800 p-4">
+      <a href="index.html" class="block py-2 hover:text-purple-400">Home</a>
+      <a href="all-calculators.html" class="block py-2 hover:text-purple-400">Calculators</a>
+      <a href="index.html#faq" class="block py-2 hover:text-purple-400">FAQ</a>
+      <a href="privacy.html" class="block py-2 hover:text-purple-400">Privacy</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="py-16 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full mb-4 shadow-lg">
+        <i class="fas fa-seedling text-white text-2xl"></i>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-bold mb-2 text-white">
+        Topsoil Calculator
+      </h1>
+      <p class="text-gray-300 max-w-2xl mx-auto">
+        Estimate topsoil volume in cubic yards or meters for gardens, lawns, and landscaping. Input area dimensions and desired depth.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Calculator Card -->
+  <section class="max-w-4xl mx-auto px-4 pb-12">
+    <div class="bg-slate-800/50 backdrop-blur-md rounded-3xl p-8 shadow-2xl border border-slate-700">
+      
+      <!-- About -->
+      <div class="mb-8">
+        <h2 class="text-xl font-semibold text-purple-400 mb-3">About the Topsoil Calculator</h2>
+        <p class="text-sm text-gray-300 leading-relaxed">
+          This calculator estimates the amount of topsoil needed for your landscaping project. Enter the area (length × width for rectangular, or diameter for circular) and desired depth to get volume in cubic yards or meters. Includes compaction factor and cost estimate.
+        </p>
+        <p class="text-sm text-gray-300 mt-3">
+          <strong>Standard depth:</strong> 4–6 inches for lawns, 8–12 inches for gardens. Topsoil is sold by the cubic yard (27 cubic feet).
+        </p>
+      </div>
+
+      <!-- Area Shape Selection -->
+      <div class="mb-6">
+        <label class="block text-sm font-medium text-gray-300 mb-2">Area Shape</label>
+        <div class="flex gap-3 flex-wrap">
+          <button onclick="setShape('rect')" class="shape-btn px-5 py-3 bg-slate-700 hover:bg-purple-600 rounded-xl transition font-medium">Rectangle</button>
+          <button onclick="setShape('circle')" class="shape-btn px-5 py-3 bg-slate-700 hover:bg-purple-600 rounded-xl transition font-medium">Circle</button>
+        </div>
+      </div>
+
+      <!-- Area Inputs -->
+      <div id="area-inputs" class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
+        <!-- Dynamic inputs -->
+      </div>
+
+      <!-- Depth & Units -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
+        <div>
+          <label class="block text-sm font-medium text-gray-300 mb-2">Desired Depth</label>
+          <div class="flex">
+            <input type="number" id="depth" min="1" step="0.5" placeholder="6" class="w-full p-3 rounded-l-xl bg-slate-700 text-white border border-r-0 border-slate-600 focus:ring-2 focus:ring-purple-500">
+            <select id="depth-unit" class="p-3 rounded-r-xl bg-slate-700 text-white border border-slate-600">
+              <option value="inches">inches</option>
+              <option value="feet">feet</option>
+              <option value="cm">cm</option>
+              <option value="meters">meters</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-300 mb-2">Volume Unit</label>
+          <select id="volume-unit" class="w-full p-3 rounded-xl bg-slate-700 text-white border border-slate-600 focus:ring-2 focus:ring-purple-500">
+            <option value="yards">Cubic Yards</option>
+            <option value="meters">Cubic Meters</option>
+            <option value="feet">Cubic Feet</option>
+            <option value="liters">Liters</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Optional Cost -->
+      <div class="mb-6 p-5 bg-slate-700/30 rounded-xl">
+        <label class="flex items-center text-sm font-medium text-gray-300 mb-2">
+          <input type="checkbox" id="cost-toggle" class="mr-2"> Include Cost Estimate
+        </label>
+        <div id="cost-input" class="hidden mt-3">
+          <label class="block text-sm text-gray-300 mb-2">Price per Cubic Yard</label>
+          <div class="flex">
+            <span class="p-3 bg-slate-700 rounded-l-xl border border-r-0 border-slate-600">$</span>
+            <input type="number" id="price" min="0" step="0.01" placeholder="45" class="w-full p-3 rounded-r-xl bg-slate-700 text-white border border-slate-600 focus:ring-2 focus:ring-purple-500">
+          </div>
+        </div>
+      </div>
+
+      <!-- Calculate Button -->
+      <button onclick="calculateTopsoil()" class="w-full bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 text-white font-semibold py-4 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-200 flex items-center justify-center">
+        <i class="fas fa-calculator mr-2"></i> Calculate Topsoil Needed
+      </button>
+
+      <!-- Result -->
+      <div id="result" class="mt-8 p-6 bg-slate-700/50 rounded-xl hidden">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+          <div>
+            <p class="text-sm text-gray-400">Volume Needed</p>
+            <div class="text-4xl font-bold text-cyan-400" id="volume">—</div>
+          </div>
+          <div>
+            <p class="text-sm text-gray-400">Bags (2 cu ft)</p>
+            <div class="text-4xl font-bold text-emerald-400" id="bags">—</div>
+          </div>
+          <div id="cost-result" class="hidden">
+            <p class="text-sm text-gray-400">Estimated Cost</p>
+            <div class="text-4xl font-bold text-yellow-400" id="cost">$—</div>
+          </div>
+        </div>
+        <div class="mt-4 text-sm text-gray-300">
+          <p><strong>Tip:</strong> Add 10% extra for compaction and settling.</p>
+        </div>
+      </div>
+
+      <!-- How to Use -->
+      <div class="mt-10 p-6 bg-slate-700/30 rounded-xl">
+        <h3 class="text-lg font-semibold text-purple-400 mb-3">How to Use the Topsoil Calculator</h3>
+        <ol class="text-sm text-gray-300 space-y-2 list-decimal list-inside">
+          <li>Select area shape (rectangle or circle)</li>
+          <li>Enter length/width or diameter</li>
+          <li>Input desired depth (4–6" for lawns, 8–12" for gardens)</li>
+          <li>Choose units and optional cost per cubic yard</li>
+          <li>Click "Calculate Topsoil Needed"</li>
+        </ol>
+        <p class="text-xs text-gray-400 mt-4">
+          <strong>Note:</strong> Volume = Area × Depth. 1 cubic yard = 27 cubic feet = ~13.5 bags (2 cu ft each).
+        </p>
+      </div>
+
+      <!-- Tips -->
+      <div class="mt-8 p-6 bg-slate-700/30 rounded-xl">
+        <h3 class="text-lg font-semibold text-purple-400 mb-3">Topsoil Tips</h3>
+        <ul class="text-sm text-gray-300 space-y-2 list-disc list-inside">
+          <li><strong>Depth:</strong> 4–6 inches for existing lawns, 8–12 inches for new gardens</li>
+          <li><strong>Compaction:</strong> Topsoil settles 10–20% — order extra</li>
+          <li><strong>Quality:</strong> Look for screened topsoil with organic matter</li>
+          <li><strong>Delivery:</strong> Most suppliers deliver by the cubic yard</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Related Calculators -->
+    <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="mulch-calculator.html" class="bg-slate-800/50 backdrop-blur p-6 rounded-xl hover:bg-slate-700/50 transition-all text-center group">
+        <i class="fas fa-leaf text-cyan-400 text-2xl mb-2 group-hover:scale-110 transition-transform"></i>
+        <p class="text-sm font-medium text-white">Mulch Calculator</p>
+        <p class="text-xs text-gray-400">Estimate mulch coverage</p>
+      </a>
+      <a href="gravel-calculator.html" class="bg-slate-800/50 backdrop-blur p-6 rounded-xl hover:bg-slate-700/50 transition-all text-center group">
+        <i class="fas fa-gem text-cyan-400 text-2xl mb-2 group-hover:scale-110 transition-transform"></i>
+        <p class="text-sm font-medium text-white">Gravel Calculator</p>
+        <p class="text-xs text-gray-400">Driveway & path volume</p>
+      </a>
+      <a href="crosswind-calculator.html" class="bg-slate-800/50 backdrop-blur p-6 rounded-xl hover:bg-slate-700/50 transition-all text-center group">
+        <i class="fas fa-wind text-cyan-400 text-2xl mb-2 group-hover:scale-110 transition-transform"></i>
+        <p class="text-sm font-medium text-white">Crosswind Calculator</p>
+        <p class="text-xs text-gray-400">Aviation tool</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 py-8 px-4 mt-16 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-center text-sm">
+        <div class="flex items-center mb-4 md:mb-0">
+          <i class="fas fa-calculator text-purple-400 mr-2"></i>
+          <span class="font-bold text-purple-400">CalcVibe</span>
+          <span class="text-gray-400 ml-2">Your trusted calculator hub for all computational needs</span>
+        </div>
+        <div class="flex space-x-6">
+          <div>
+            <p class="font-medium text-white mb-1">Calculators</p>
+            <ul class="text-xs text-gray-400 space-y-1">
+              <li><a href="topsoil-calculator.html" class="hover:text-purple-400">Topsoil</a></li>
+              <li><a href="mulch-calculator.html" class="hover:text-purple-400">Mulch</a></li>
+              <li><a href="gravel-calculator.html" class="hover:text-purple-400">Gravel</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-medium text-white mb-1">Legal</p>
+            <ul class="text-xs text-gray-400 space-y-1">
+              <li><a href="privacy.html" class="hover:text-purple-400">Privacy Policy</a></li>
+              <li><a href="terms.html" class="hover:text-purple-400">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="text-center text-xs text-gray-500 mt-8">© 2025 CalcVibe Calculator Hub. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Mobile Menu
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Area Shape
+    let shape = 'rect';
+
+    function setShape(s) {
+      shape = s;
+      const inputs = document.getElementById('area-inputs');
+      inputs.innerHTML = '';
+
+      if (s === 'rect') {
+        inputs.innerHTML = `
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Length</label>
+            <div class="flex">
+              <input type="number" id="length" min="0" step="0.1" placeholder="20" class="w-full p-3 rounded-l-xl bg-slate-700 text-white border border-r-0 border-slate-600 focus:ring-2 focus:ring-purple-500">
+              <select id="length-unit" class="p-3 rounded-r-xl bg-slate-700 text-white border border-slate-600">
+                <option value="feet">feet</option>
+                <option value="meters">meters</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Width</label>
+            <div class="flex">
+              <input type="number" id="width" min="0" step="0.1" placeholder="10" class="w-full p-3 rounded-l-xl bg-slate-700 text-white border border-r-0 border-slate-600 focus:ring-2 focus:ring-purple-500">
+              <select id="width-unit" class="p-3 rounded-r-xl bg-slate-700 text-white border border-slate-600">
+                <option value="feet">feet</option>
+                <option value="meters">meters</option>
+              </select>
+            </div>
+          </div>
+        `;
+      } else if (s === 'circle') {
+        inputs.innerHTML = `
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Diameter</label>
+            <div class="flex">
+              <input type="number" id="diameter" min="0" step="0.1" placeholder="15" class="w-full p-3 rounded-l-xl bg-slate-700 text-white border border-r-0 border-slate-600 focus:ring-2 focus:ring-purple-500">
+              <select id="diameter-unit" class="p-3 rounded-r-xl bg-slate-700 text-white border border-slate-600">
+                <option value="feet">feet</option>
+                <option value="meters">meters</option>
+              </select>
+            </div>
+          </div>
+        `;
+      }
+
+      // Update active button
+      document.querySelectorAll('.shape-btn').forEach(btn => {
+        btn.classList.remove('bg-purple-600', 'text-white');
+        btn.classList.add('bg-slate-700');
+      });
+      event.target.classList.add('bg-purple-600', 'text-white');
+      event.target.classList.remove('bg-slate-700');
+    }
+
+    // Cost Toggle
+    document.getElementById('cost-toggle').addEventListener('change', function() {
+      document.getElementById('cost-input').classList.toggle('hidden', !this.checked);
+    });
+
+    // Calculate Topsoil
+    function calculateTopsoil() {
+      // Get area
+      let area = 0;
+      if (shape === 'rect') {
+        const length = parseFloat(document.getElementById('length').value) || 0;
+        const width = parseFloat(document.getElementById('width').value) || 0;
+        const lengthUnit = document.getElementById('length-unit').value;
+        const widthUnit = document.getElementById('width-unit').value;
+        if (length <= 0 || width <= 0) return alert('Enter valid length and width');
+        area = length * width;
+        if (lengthUnit === 'meters' || widthUnit === 'meters') area *= 10.7639; // m² to ft²
+      } else if (shape === 'circle') {
+        const diameter = parseFloat(document.getElementById('diameter').value) || 0;
+        const diameterUnit = document.getElementById('diameter-unit').value;
+        if (diameter <= 0) return alert('Enter valid diameter');
+        const radius = diameter / 2;
+        area = Math.PI * radius * radius;
+        if (diameterUnit === 'meters') area *= 10.7639;
+      }
+
+      // Depth
+      const depth = parseFloat(document.getElementById('depth').value) || 0;
+      const depthUnit = document.getElementById('depth-unit').value;
+      if (depth <= 0) return alert('Enter valid depth');
+      let depthFt = depth;
+      if (depthUnit === 'inches') depthFt /= 12;
+      if (depthUnit === 'cm') depthFt = depth * 0.0328084;
+      if (depthUnit === 'meters') depthFt *= 3.28084;
+
+      // Volume
+      let volumeYards = (area * depthFt) / 27;
+      let volumeMeters = volumeYards * 0.764555;
+      let volumeFeet = volumeYards * 27;
+      let volumeLiters = volumeMeters * 1000;
+
+      // Bags (2 cu ft)
+      const bags = Math.ceil(volumeFeet / 2);
+
+      // Cost
+      let cost = 0;
+      if (document.getElementById('cost-toggle').checked) {
+        const price = parseFloat(document.getElementById('price').value) || 0;
+        cost = (volumeYards * price).toFixed(2);
+      }
+
+      // Display
+      const unit = document.getElementById('volume-unit').value;
+      let volume = 0;
+      if (unit === 'yards') volume = volumeYards.toFixed(2);
+      if (unit === 'meters') volume = volumeMeters.toFixed(2);
+      if (unit === 'feet') volume = volumeFeet.toFixed(2);
+      if (unit === 'liters') volume = volumeLiters.toFixed(0);
+
+      document.getElementById('volume').textContent = `${volume} ${unit}`;
+      document.getElementById('bags').textContent = bags;
+      if (cost > 0) {
+        document.getElementById('cost').textContent = `$${cost}`;
+        document.getElementById('cost-result').classList.remove('hidden');
+      } else {
+        document.getElementById('cost-result').classList.add('hidden');
+      }
+
+      document.getElementById('result').classList.remove('hidden');
+
+      gtag('event', 'topsoil_calculate', { shape, area: area.toFixed(2), depth: depthFt.toFixed(2), volume });
+    }
+
+    // Initialize with rectangle
+    setShape('rect');
+  </script>
+
+</body>
+</html>

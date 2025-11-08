@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="CalcVibe - Free online calculators for academics, gaming, math, and practical tools. SAT, GPA, Pokémon, topsoil, crosswind, and more." />
+  <meta name="keywords" content="calculator hub, sat score calculator, gpa calculator, pokemon damage, topsoil calculator, crosswind calculator, ap score calculator" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="CalcVibe - Your All-in-One Calculator Hub" />
+  <meta property="og:description" content="Free, fast, and accurate calculators for students, gamers, and professionals. From SAT to Pokémon to topsoil — we’ve got you covered." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://calcvibe.in/" />
+  <meta property="og:image" content="https://calcvibe.in/assets/images/og-home.jpg" />
+  <title>CalcVibe - Your All-in-One Calculator Hub</title>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://calcvibe.com/#website",
+      "url": "https://calcvibe.com",
+      "name": "CalcVibe",
+      "description": "Free online calculator hub for students, gamers, and professionals.",
+      "publisher": { "@type": "Organization", "name": "CalcVibe" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://calcvibe.com/#webpage",
+      "url": "https://calcvibe.com/",
+      "name": "CalcVibe - Your All-in-One Calculator Hub",
+      "description": "Free calculators: SAT, GPA, Pokémon, topsoil, crosswind, AP scores, and more. No sign-up. Works offline.",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcvibe.com/" }
+        ]
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "name": "Featured Calculators",
+      "description": "Top free tools: SAT Score, Pokémon Damage, GPA, Topsoil, Crosswind, AP Biology.",
+      "hasPart": [
+        { "@type": "CreativeWork", "name": "SAT Score Calculator", "url": "https://calcvibe.com/sat-score-calculator.html" },
+        { "@type": "CreativeWork", "name": "Pokémon Damage Calculator", "url": "https://calcvibe.com/pokemon-damage-calculator.html" },
+        { "@type": "CreativeWork", "name": "GPA Calculator", "url": "https://calcvibe.com/gpa-calculator.html" }
+      ]
+    }
+  ]
+}
+</script>
+  
+</head>
+<body class="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white">
+
+  <!-- Header -->
+  <header class="bg-slate-900/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
+    <nav class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-purple-400 flex items-center">
+        <i class="fas fa-calculator mr-2"></i> CalcVibe
+      </a>
+      <ul class="hidden md:flex space-x-6 text-sm">
+        <li><a href="index.html" class="hover:text-purple-400">Home</a></li>
+        <li><a href="all-calculators.html" class="hover:text-purple-400">Calculators</a></li>
+        <li><a href="#about" class="hover:text-purple-400">About</a></li>
+        <li><a href="#faq" class="hover:text-purple-400">FAQ</a></li>
+        <li><a href="privacy.html" class="hover:text-purple-400">Privacy</a></li>
+      </ul>
+      <button id="mobile-menu-btn" class="md:hidden text-white">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-800 p-4">
+      <a href="index.html" class="block py-2 hover:text-purple-400">Home</a>
+      <a href="all-calculators.html" class="block py-2 hover:text-purple-400">Calculators</a>
+      <a href="#about" class="block py-2 hover:text-purple-400">About</a>
+      <a href="#faq" class="block py-2 hover:text-purple-400">FAQ</a>
+      <a href="privacy.html" class="block py-2 hover:text-purple-400">Privacy</a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION - UNCHANGED -->
+  <section class="py-20 px-4 text-center">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
+        
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <div class="w-24 h-24 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full flex items-center justify-center shadow-2xl">
+            <i class="fas fa-calculator text-white text-4xl"></i>
+          </div>
+        </div>
+
+        <!-- Title + SVG + Text in Line -->
+        <div class="flex items-center gap-4 text-left md:text-left">
+          <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">
+            CalcVibe
+          </h1>
+          
+          <!-- Calculator SVG Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-cyan-400 hidden md:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+          </svg>
+
+          <!-- Tagline Text -->
+          <p class="text-lg md:text-xl text-gray-300 max-w-md">
+            Your <span class="text-purple-400 font-semibold">all-in-one</span> hub for <span class="text-cyan-400 font-semibold">academic</span>, <span class="text-emerald-400 font-semibold">gaming</span>, and <span class="text-yellow-400 font-semibold">practical</span> calculators.
+          </p>
+        </div>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="all-calculators.html" class="px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-bold rounded-xl shadow-lg transform hover:scale-105 transition-all duration-200 flex items-center justify-center">
+          <i class="fas fa-th mr-2"></i> View All Calculators
+        </a>
+        <a href="#featured" class="px-8 py-4 bg-slate-700 hover:bg-slate-600 text-white font-bold rounded-xl shadow-lg transform hover:scale-105 transition-all duration-200 flex items-center justify-center">
+          <i class="fas fa-star mr-2"></i> Featured Tools
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Calculators -->
+  <section id="featured" class="py-16 px-4 bg-slate-900/50">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12 text-purple-400">Featured Calculators</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- SAT Score -->
+        <a href="sat-score-calculator.html" class="group bg-slate-800/60 backdrop-blur-md rounded-2xl p-6 border border-slate-700 hover:border-purple-500 transition-all hover:shadow-xl">
+          <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <i class="fas fa-edit text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">SAT Score Calculator</h3>
+          <p class="text-sm text-gray-400">Convert raw scores to 400–1600 scale with percentiles.</p>
+        </a>
+
+        <!-- Pokémon Damage -->
+        <a href="pokemon-damage-calculator.html" class="group bg-slate-800/60 backdrop-blur-md rounded-2xl p-6 border border-slate-700 hover:border-purple-500 transition-all hover:shadow-xl">
+          <div class="w-14 h-14 bg-gradient-to-br from-cyan-500 to-emerald-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <i class="fas fa-bolt text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Pokémon Damage Calculator</h3>
+          <p class="text-sm text-gray-400">Gen 9 SV battle simulator with Tera, items, weather.</p>
+        </a>
+
+        <!-- GPA -->
+        <a href="gpa-calculator.html" class="group bg-slate-800/60 backdrop-blur-md rounded-2xl p-6 border border-slate-700 hover:border-purple-500 transition-all hover:shadow-xl">
+          <div class="w-14 h-14 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <i class="fas fa-chart-line text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">GPA Calculator</h3>
+          <p class="text-sm text-gray-400">Weighted & unweighted GPA from grades and credits.</p>
+        </a>
+
+        <!-- Topsoil -->
+        <a href="topsoil-calculator.html" class="group bg-slate-800/60 backdrop-blur-md rounded-2xl p-6 border border-slate-700 hover:border-purple-500 transition-all hover:shadow-xl">
+          <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-teal-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <i class="fas fa-seedling text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Topsoil Calculator</h3>
+          <p class="text-sm text-gray-400">Volume for gardens, lawns, and landscaping projects.</p>
+        </a>
+
+        <!-- Crosswind -->
+        <a href="crosswind-calculator.html" class="group bg-slate-800/60 backdrop-blur-md rounded-2xl p-6 border border-slate-700 hover:border-purple-500 transition-all hover:shadow-xl">
+          <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <i class="fas fa-wind text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Crosswind Calculator</h3>
+          <p class="text-sm text-gray-400">Aviation tool for runway wind components.</p>
+        </a>
+
+        <!-- APUSH Score Calculator -->
+        <a href="apush-score-calculator.html" class="group bg-slate-800/60 backdrop-blur-md rounded-2xl p-6 border border-slate-700 hover:border-purple-500 transition-all hover:shadow-xl">
+          <div class="w-14 h-14 bg-gradient-to-br from-pink-500 to-rose-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <i class="fas fa-dna text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">APUSH Score Calculator</h3>
+          <p class="text-sm text-gray-400">Estimate your AP US History exam score (1-5) using official rubrics.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="py-16 px-4">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12 text-purple-400">Explore by Category</h2>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <a href="all-calculators.html#academic" class="bg-gradient-to-br from-purple-600 to-indigo-700 p-8 rounded-2xl text-center hover:shadow-2xl transition-all transform hover:-translate-y-1">
+          <i class="fas fa-graduation-cap text-4xl mb-3"></i>
+          <h3 class="text-xl font-bold">Academic</h3>
+          <p class="text-sm mt-2">SAT, AP, GPA, Grade</p>
+        </a>
+        <a href="all-calculators.html#gaming" class="bg-gradient-to-br from-cyan-600 to-emerald-700 p-8 rounded-2xl text-center hover:shadow-2xl transition-all transform hover:-translate-y-1">
+          <i class="fas fa-gamepad text-4xl mb-3"></i>
+          <h3 class="text-xl font-bold">Gaming</h3>
+          <p class="text-sm mt-2">Pokémon, IV, EV</p>
+        </a>
+        <a href="all-calculators.html#math" class="bg-gradient-to-br from-yellow-600 to-orange-700 p-8 rounded-2xl text-center hover:shadow-2xl transition-all transform hover:-translate-y-1">
+          <i class="fas fa-square-root-alt text-4xl mb-3"></i>
+          <h3 class="text-xl font-bold">Math</h3>
+          <p class="text-sm mt-2">Algebra, Geometry, Stats</p>
+        </a>
+        <a href="all-calculators.html#practical" class="bg-gradient-to-br from-green-600 to-teal-700 p-8 rounded-2xl text-center hover:shadow-2xl transition-all transform hover:-translate-y-1">
+          <i class="fas fa-tools text-4xl mb-3"></i>
+          <h3 class="text-xl font-bold">Practical</h3>
+          <p class="text-sm mt-2">Topsoil, Paint, Loan</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="py-20 px-4 bg-slate-900/50">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-purple-400">About CalcVibe</h2>
+      <p class="text-lg text-gray-300 leading-relaxed mb-6">
+        <strong>CalcVibe</strong> is a free, fast, and accurate online calculator hub designed for students, gamers, professionals, and DIY enthusiasts. We provide <strong>instant, reliable tools</strong> that eliminate guesswork and save time.
+      </p>
+      <p class="text-gray-300 leading-relaxed mb-6">
+        Whether you're prepping for the <strong>SAT</strong>, optimizing your <strong>Pokémon team</strong>, calculating <strong>GPA</strong>, estimating <strong>topsoil for landscaping</strong>, or determining <strong>crosswind components</strong> for aviation — we’ve got you covered.
+      </p>
+      <p class="text-gray-300 leading-relaxed">
+        All calculators run <strong>100% in your browser</strong> — no data is stored, no sign-up required, and no ads that interrupt your workflow. Our mission is simple: <strong>Make complex calculations simple and accessible to everyone.</strong>
+      </p>
+      <div class="mt-10 flex justify-center gap-6">
+        <div class="text-center">
+          <p class="text-4xl font-bold text-cyan-400">50+</p>
+          <p class="text-sm text-gray-400">Calculators</p>
+        </div>
+        <div class="text-center">
+          <p class="text-4xl font-bold text-emerald-400">100%</p>
+          <p class="text-sm text-gray-400">Free & Private</p>
+        </div>
+        <div class="text-center">
+          <p class="text-4xl font-bold text-yellow-400">24/7</p>
+          <p class="text-sm text-gray-400">Always Available</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-16 px-4 bg-slate-900/30">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12 text-purple-400">Frequently Asked Questions</h2>
+      <div class="space-y-6">
+        <details class="bg-slate-800/60 backdrop-blur-md rounded-xl p-6 border border-slate-700">
+          <summary class="text-lg font-semibold cursor-pointer flex justify-between items-center">
+            Are CalcVibe calculators accurate?
+            <i class="fas fa-chevron-down ml-4"></i>
+          </summary>
+          <p class="mt-4 text-gray-300">Yes. We use <strong>official formulas</strong> from College Board, Pokémon Showdown, aviation standards, and engineering principles. SAT, AP, and Pokémon calculators match real-world scoring systems exactly.</p>
+        </details>
+
+        <details class="bg-slate-800/60 backdrop-blur-md rounded-xl p-6 border border-slate-700">
+          <summary class="text-lg font-semibold cursor-pointer flex justify-between items-center">
+            Do I need to sign up or install anything?
+            <i class="fas fa-chevron-down ml-4"></i>
+          </summary>
+          <p class="mt-4 text-gray-300">No. All calculators work <strong>instantly in your browser</strong> — no account, no download, no app. Just visit and calculate.</p>
+        </details>
+
+        <details class="bg-slate-800/60 backdrop-blur-md rounded-xl p-6 border border-slate-700">
+          <summary class="text-lg font-semibold cursor-pointer flex justify-between items-center">
+            Is my data private and secure?
+            <i class="fas fa-chevron-down ml-4"></i>
+          </summary>
+          <p class="mt-4 text-gray-300">Yes. <strong>Nothing is stored or sent</strong> to our servers. All calculations happen locally in your browser. Your inputs are never saved or shared.</p>
+        </details>
+
+        <details class="bg-slate-800/60 backdrop-blur-md rounded-xl p-6 border border-slate-700">
+          <summary class="text-lg font-semibold cursor-pointer flex justify-between items-center">
+            Can I use CalcVibe on my phone or tablet?
+            <i class="fas fa-chevron-down ml-4"></i>
+          </summary>
+          <p class="mt-4 text-gray-300">Absolutely. Every calculator is <strong>fully responsive</strong> and works perfectly on mobile, tablet, and desktop devices.</p>
+        </details>
+
+        <details class="bg-slate-800/60 backdrop-blur-md rounded-xl p-6 border border-slate-700">
+          <summary class="text-lg font-semibold cursor-pointer flex justify-between items-center">
+            How often are calculators updated?
+            <i class="fas fa-chevron-down ml-4"></i>
+          </summary>
+          <p class="mt-4 text-gray-300">We update calculators <strong>as soon as new standards are released</strong> — e.g., SAT 2025 changes, new Pokémon generations, or updated AP rubrics.</p>
+        </details>
+
+        <details class="bg-slate-800/60 backdrop-blur-md rounded-xl p-6 border border-slate-700">
+          <summary class="text-lg font-semibold cursor-pointer flex justify-between items-center">
+            Can I suggest a new calculator?
+            <i class="fas fa-chevron-down ml-4"></i>
+          </summary>
+          <p class="mt-4 text-gray-300">Yes! Use our <strong>contact form</strong> or email us at <a href="mailto:suggest@calcvibe.in" class="text-purple-400 underline">suggest@calcvibe.in</a>. We love building tools users need.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 py-12 px-4 mt-16 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <div class="flex items-center mb-4">
+            <i class="fas fa-calculator text-purple-400 text-2xl mr-2"></i>
+            <span class="text-xl font-bold text-purple-400">CalcVibe</span>
+          </div>
+          <p class="text-sm text-gray-400">Your trusted hub for fast, free, and accurate calculators.</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-white mb-3">Categories</h4>
+          <ul class="text-sm text-gray-400 space-y-1">
+            <li><a href="all-calculators.html#academic" class="hover:text-purple-400">Academic</a></li>
+            <li><a href="all-calculators.html#gaming" class="hover:text-purple-400">Gaming</a></li>
+            <li><a href="all-calculators.html#math" class="hover:text-purple-400">Math</a></li>
+            <li><a href="all-calculators.html#practical" class="hover:text-purple-400">Practical</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-white mb-3">Popular Tools</h4>
+          <ul class="text-sm text-gray-400 space-y-1">
+            <li><a href="sat-score-calculator.html" class="hover:text-purple-400">SAT Score</a></li>
+            <li><a href="pokemon-damage-calculator.html" class="hover:text-purple-400">Pokémon Damage</a></li>
+            <li><a href="gpa-calculator.html" class="hover:text-purple-400">GPA Calculator</a></li>
+            <li><a href="topsoil-calculator.html" class="hover:text-purple-400">Topsoil</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-white mb-3">Legal</h4>
+          <ul class="text-sm text-gray-400 space-y-1">
+            <li><a href="privacy.html" class="hover:text-purple-400">Privacy Policy</a></li>
+            <li><a href="terms.html" class="hover:text-purple-400">Terms of Service</a></li>
+            <li><a href="contact.html" class="hover:text-purple-400">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="text-center text-xs text-gray-500">© 2025 CalcVibe Calculator Hub. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Mobile Menu
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Smooth Scroll for Anchor Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+          if (window.innerWidth < 768) {
+            document.getElementById('mobile-menu').classList.add('hidden');
+          }
+        }
+      });
+    });
+
+    // FAQ Chevron Rotation
+    document.querySelectorAll('details').forEach(detail => {
+      detail.addEventListener('toggle', () => {
+        const chevron = detail.querySelector('i');
+        if (detail.open) {
+          chevron.classList.replace('fa-chevron-down', 'fa-chevron-up');
+        } else {
+          chevron.classList.replace('fa-chevron-up', 'fa-chevron-down');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

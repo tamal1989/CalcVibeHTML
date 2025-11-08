@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Pokémon Shiny Tracker - Track your shiny counter and encounter stats. Real-time Pokémon shiny counter and Pokémon encounter counter. Free shiny tracker tool." />
+  <meta name="keywords" content="shiny counter, shiny tracker, pokemon shiny counter, pokemon encounter counter, pokemon shiny tracker" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Pokémon Shiny Tracker - Shiny Counter & Encounter Tracker | CalcVibe" />
+  <meta property="og:description" content="Track your Pokémon shiny counter and encounter stats in real-time. Free Pokémon shiny tracker with reset, save, and export. No login needed." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://calcvibe.com/shiny-tracker.html" />
+  <meta property="og:image" content="https://calcvibe.com/assets/images/og-shiny.jpg" />
+  <title>Pokémon Shiny Tracker - Shiny Counter & Encounter Tracker | CalcVibe</title>
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://calcvibe.com/shiny-tracker.html#webpage",
+        "url": "https://calcvibe.com/shiny-tracker.html",
+        "name": "Pokémon Shiny Tracker - Shiny Counter & Encounter Tracker",
+        "description": "Real-time Pokémon shiny counter and Pokémon encounter counter. Free shiny tracker with stats, export, and save.",
+        "inLanguage": "en-US",
+        "isPartOf": { "@type": "WebSite", "url": "https://calcvibe.com", "name": "CalcVibe" },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcvibe.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Gaming", "item": "https://calcvibe.com/all-calculators.html#gaming" },
+            { "@type": "ListItem", "position": 3, "name": "Pokémon Shiny Tracker", "item": "https://calcvibe.com/shiny-tracker.html" }
+          ]
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "CalcVibe Pokémon Shiny Tracker",
+        "applicationCategory": "Game",
+        "offers": { "@type": "Offer", "price": "0" },
+        "description": "Free Pokémon shiny tracker. Track shiny counter, encounter counter, odds, and export data.",
+        "url": "https://calcvibe.com/shiny-tracker.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a shiny counter?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A shiny counter tracks how many Pokémon you've encountered while hunting for a shiny. This Pokémon shiny counter helps you stay motivated."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the Pokémon encounter counter work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Every time you encounter a Pokémon, click '+1'. The Pokémon encounter counter updates in real-time and saves to your browser."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <style>
+    .shiny-glow {
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.6), 0 0 40px rgba(255, 215, 0, 0.4);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.6); }
+      50% { box-shadow: 0 0 40px rgba(255, 215, 0, 0.8); }
+      100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.6); }
+    }
+    .encounter-btn {
+      transition: all 0.2s;
+    }
+    .encounter-btn:active {
+      transform: scale(0.95);
+    }
+  </style>
+
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+</head>
+<body class="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white">
+
+  <!-- Header -->
+  <header class="bg-slate-900/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
+    <nav class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-purple-400 flex items-center">
+        <i class="fas fa-calculator mr-2"></i> CalcVibe
+      </a>
+      <ul class="hidden md:flex space-x-6 text-sm">
+        <li><a href="index.html" class="hover:text-purple-400">Home</a></li>
+        <li><a href="all-calculators.html" class="hover:text-purple-400">Calculators</a></li>
+        <li><a href="index.html#about" class="hover:text-purple-400">About</a></li>
+        <li><a href="index.html#faq" class="hover:text-purple-400">FAQ</a></li>
+        <li><a href="privacy.html" class="hover:text-purple-400">Privacy</a></li>
+      </ul>
+      <button id="mobile-menu-btn" class="md:hidden text-white">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-800 p-4">
+      <a href="index.html" class="block py-2 hover:text-purple-400">Home</a>
+      <a href="all-calculators.html" class="block py-2 hover:text-purple-400">Calculators</a>
+      <a href="index.html#about" class="block py-2 hover:text-purple-400">About</a>
+      <a href="index.html#faq" class="block py-2 hover:text-purple-400">FAQ</a>
+      <a href="privacy.html" class="block py-2 hover:text-purple-400">Privacy</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="py-16 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-yellow-400 to-amber-600 rounded-full mb-6 shadow-2xl shiny-glow">
+        <i class="fas fa-star text-slate-900 text-3xl"></i>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-400">
+        Pokémon Shiny Tracker
+      </h1>
+      <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
+        Track your <strong>shiny counter</strong> and <strong>Pokémon encounter counter</strong> in real-time. This <strong>Pokémon shiny tracker</strong> saves your progress and shows live odds.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button onclick="increment()" class="px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold rounded-xl shadow-lg transform hover:scale-105 transition-all duration-200 text-xl encounter-btn">
+          <i class="fas fa-plus mr-2"></i> +1 Encounter
+        </button>
+        <button onclick="foundShiny()" class="px-8 py-4 bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-600 hover:to-amber-700 text-slate-900 font-bold rounded-xl shadow-lg transform hover:scale-105 transition-all duration-200 text-xl encounter-btn">
+          <i class="fas fa-star mr-2"></i> Found Shiny!
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tracker Card -->
+  <section class="max-w-4xl mx-auto px-4 pb-16">
+    <div class="bg-slate-800/60 backdrop-blur-md rounded-3xl p-8 shadow-2xl border border-slate-700">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+        <!-- Encounters -->
+        <div class="bg-slate-700/50 rounded-2xl p-6">
+          <i class="fas fa-shoe-prints text-cyan-400 text-3xl mb-3"></i>
+          <p class="text-sm text-gray-400">Total Encounters</p>
+          <p id="encounters" class="text-4xl font-bold text-white">0</p>
+        </div>
+        <!-- Shinies -->
+        <div class="bg-slate-700/50 rounded-2xl p-6">
+          <i class="fas fa-star text-yellow-400 text-3xl mb-3"></i>
+          <p class="text-sm text-gray-400">Shinies Found</p>
+          <p id="shinies" class="text-4xl font-bold text-white">0</p>
+        </div>
+        <!-- Odds -->
+        <div class="bg-slate-700/50 rounded-2xl p-6">
+          <i class="fas fa-percentage text-purple-400 text-3xl mb-3"></i>
+          <p class="text-sm text-gray-400">Current Odds</p>
+          <p id="odds" class="text-4xl font-bold text-white">1/4096</p>
+        </div>
+      </div>
+
+      <!-- Hunt Info -->
+      <div class="mt-8 p-6 bg-slate-700/30 rounded-2xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Target Pokémon</label>
+            <input type="text" id="pokemon-name" placeholder="e.g., Charmander" class="w-full p-3 rounded-lg bg-slate-700 text-white border border-slate-600 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2">Method</label>
+            <select id="method" class="w-full p-3 rounded-lg bg-slate-700 text-white border border-slate-600 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all">
+              <option value="4096">Full Odds (1/4096)</option>
+              <option value="1365">Masuda Method (1/1365)</option>
+              <option value="1024">Shiny Charm (1/1024)</option>
+              <option value="512">Masuda + Charm (1/512)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="mt-8 flex flex-wrap gap-3 justify-center">
+        <button onclick="resetHunt()" class="px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg shadow-md transform hover:scale-105 transition-all duration-200">
+          <i class="fas fa-trash mr-2"></i> Reset Hunt
+        </button>
+        <button onclick="exportData()" class="px-6 py-3 bg-cyan-600 hover:bg-cyan-700 text-white font-semibold rounded-lg shadow-md transform hover:scale-105 transition-all duration-200">
+          <i class="fas fa-download mr-2"></i> Export
+        </button>
+        <button onclick="saveHunt()" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg shadow-md transform hover:scale-105 transition-all duration-200">
+          <i class="fas fa-save mr-2"></i> Save
+        </button>
+      </div>
+
+      <!-- Last Saved -->
+      <p id="last-saved" class="text-center text-sm text-gray-400 mt-6">Last saved: Never</p>
+    </div>
+
+    <!-- Back to Gaming -->
+    <div class="mt-12 text-center">
+      <a href="all-calculators.html#gaming" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-semibold rounded-xl shadow-lg transform hover:scale-105 transition-all duration-200">
+        <i class="fas fa-gamepad mr-2"></i> More Gaming Tools
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 py-12 px-4 mt-16 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto text-center text-sm">
+      <p class="text-gray-400">
+        Your trusted hub for <strong>academic</strong>, <strong>gaming</strong>, <strong>math</strong>, and <strong>practical</strong> calculators.
+      </p>
+      <p class="text-gray-500 mt-2">© 2025 CalcVibe Calculator Hub. All rights reserved. |
+        <a href="privacy.html" class="hover:text-purple-400">Privacy</a> |
+        <a href="terms.html" class="hover:text-purple-400">Terms</a> |
+        <a href="contact.html" class="hover:text-purple-400">Contact</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile Menu
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Shiny Tracker Logic
+    let encounters = 0;
+    let shinies = 0;
+    let baseOdds = 4096;
+
+    // Load from localStorage
+    function loadHunt() {
+      const saved = localStorage.getItem('shinyHunt');
+      if (saved) {
+        const data = JSON.parse(saved);
+        encounters = data.encounters || 0;
+        shinies = data.shinies || 0;
+        document.getElementById('pokemon-name').value = data.pokemon || '';
+        document.getElementById('method').value = data.odds || 4096;
+        baseOdds = parseInt(data.odds) || 4096;
+        updateDisplay();
+        document.getElementById('last-saved').textContent = `Last saved: ${new Date(data.timestamp).toLocaleString()}`;
+      }
+    }
+
+    // Update UI
+    function updateDisplay() {
+      document.getElementById('encounters').textContent = encounters.toLocaleString();
+      document.getElementById('shinies').textContent = shinies;
+      const currentOdds = encounters > 0 ? Math.round(baseOdds / (encounters / shinies)) : baseOdds;
+      document.getElementById('odds').textContent = `1/${currentOdds}`;
+    }
+
+    // Increment encounter
+    function increment() {
+      encounters++;
+      updateDisplay();
+      autoSave();
+    }
+
+    // Found shiny
+    function foundShiny() {
+      shinies++;
+      updateDisplay();
+      autoSave();
+      // Celebration
+      const btn = event.target;
+      btn.innerHTML = '<i class="fas fa-star mr-2"></i> SHINY!';
+      setTimeout(() => {
+        btn.innerHTML = '<i class="fas fa-star mr-2"></i> Found Shiny!';
+      }, 2000);
+    }
+
+    // Reset
+    function resetHunt() {
+      if (confirm('Reset your shiny counter and Pokémon encounter counter? This cannot be undone.')) {
+        encounters = 0;
+        shinies = 0;
+        document.getElementById('pokemon-name').value = '';
+        document.getElementById('method').value = 4096;
+        baseOdds = 4096;
+        updateDisplay();
+        localStorage.removeItem('shinyHunt');
+        document.getElementById('last-saved').textContent = 'Last saved: Never';
+      }
+    }
+
+    // Export
+    function exportData() {
+      const data = {
+        pokemon: document.getElementById('pokemon-name').value,
+        encounters,
+        shinies,
+        odds: baseOdds,
+        timestamp: new Date().toISOString()
+      };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `shiny-hunt-${data.pokemon || 'unknown'}-${Date.now()}.json`;
+      a.click();
+    }
+
+    // Save
+    function saveHunt() {
+      const data = {
+        pokemon: document.getElementById('pokemon-name').value,
+        encounters,
+        shinies,
+        odds: document.getElementById('method').value,
+        timestamp: new Date().toISOString()
+      };
+      localStorage.setItem('shinyHunt', JSON.stringify(data));
+      document.getElementById('last-saved').textContent = `Last saved: ${new Date().toLocaleString()}`;
+      alert('Hunt saved!');
+    }
+
+    // Auto-save every 10 encounters
+    function autoSave() {
+      if (encounters % 10 === 0 && encounters > 0) {
+        saveHunt();
+      }
+    }
+
+    // Method change
+    document.getElementById('method').addEventListener('change', (e) => {
+      baseOdds = parseInt(e.target.value);
+      updateDisplay();
+    });
+
+    // Keyboard shortcut: Space = +1
+    document.addEventListener('keydown', (e) => {
+      if (e.code === 'Space' && e.target.tagName !== 'INPUT') {
+        e.preventDefault();
+        increment();
+      }
+    });
+
+    // Init
+    loadHunt();
+  </script>
+</body>
+</html>
